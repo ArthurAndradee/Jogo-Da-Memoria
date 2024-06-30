@@ -52,9 +52,7 @@ function App({ cards }: appProps) {
   const winner = () => {
     const allTurned = lst.every((card) => card.isTurned);
     if (allTurned) {
-      var resposta:boolean = 
-      confirm(`Parabéns você venceu!!, número de jogadas: ${numJogadas} 
-gostaria de jogar mais uma vez?`);
+      const resposta : boolean = confirm(`Parabéns você venceu!!, número de jogadas: ${numJogadas} gostaria de jogar mais uma vez?`);
       if(resposta){
         alert('Boa partida!');
         window.location.reload();
@@ -63,6 +61,7 @@ gostaria de jogar mais uma vez?`);
   }
   useEffect(() => {
     winner();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [numJogadas]);
 
 
