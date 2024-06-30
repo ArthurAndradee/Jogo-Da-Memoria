@@ -1,4 +1,4 @@
-import { CardProps } from "../Card";
+import { CardProps } from "../components/Card";
 
 export const duplicateCards = <T>(array: T[]): T[] => {
     return [...array, ...array];

@@ -1,4 +1,4 @@
-import background from './assets/background.jpg'
+import background from '../assets/background.jpg'
 
 export interface CardProps {
     url: string,
