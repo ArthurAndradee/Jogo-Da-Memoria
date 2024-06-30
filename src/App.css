@@ -1,0 +1,11 @@
+.container {
+    width: 120vh;
+    height: 80vh;
+
+    background-color: transparent;
+    
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 50px;
+}  

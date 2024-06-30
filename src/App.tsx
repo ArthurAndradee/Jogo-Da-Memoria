@@ -66,14 +66,9 @@ function App({ cards }: appProps) {
 
 
   return (
-    <div style={{
-      width: '120vh', height: '80vh',
-      padding: '40px', backgroundColor: 'transparent', margin: '0 auto',
-      display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr'
-      , gridColumnGap: '35px', gridRowGap: '15px'
-    }}>
+    <div className='container'>
       {lst.map((card) => {
-        return <Card {...card} key={Math.random()} handleClick={HandleClick} />
+        return <Card {...card} key={Math.random()} handleClick={HandleClick}/>
       })}
     </div>
   )
