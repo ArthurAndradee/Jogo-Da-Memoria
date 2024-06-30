@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import './App.css';
-import Card, { CardProps } from './components/Card';
 import { resetCardsSort } from './utils/cards_functions';
+import Card, { CardProps } from './components/Card';
+import './App.css';
 
 export interface appProps {
   cards: CardProps[];
