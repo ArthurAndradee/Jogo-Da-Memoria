@@ -11,14 +11,14 @@ export interface appProps {
 function App({ cards }: appProps) {
   const [selected, Setselected] = useState<string[]>([])
   const [click, Setclick] = useState(0)
-  const [numJogadas, SetnumJogadas] = useState(0)
+  const staticCardId = 999
   const [lst, Setlst] = useState(() => {
     const sortedCards = resetCardsSort(cards)
     const staticCard = { url: centerCard, id: staticCardId, isTurned: false }
-    sortedCards.splice(17, 0, staticCard) 
+    sortedCards.splice(17, 0, staticCard)
     return sortedCards
   })
-  const staticCardId = 999
+  const [numJogadas, SetnumJogadas] = useState(0)
 
   const turnCard = (url1: string, url2: string) => {
     const turn = lst.map((card) => {
@@ -34,8 +34,9 @@ function App({ cards }: appProps) {
     if (id === staticCardId) return
 
     const check = lst.map((card) => {
-      if (card.id !== id || card.isTurned) return card
       
+      if (card.id !== id || card.isTurned) return card
+
       if (card.isTurned === false) {
         if (selected.length < 2) {
           card.isTurned = true
@@ -51,7 +52,7 @@ function App({ cards }: appProps) {
         }
       }
       Setclick(click + 1)
-      
+
       return card
     })
     Setlst(check)
