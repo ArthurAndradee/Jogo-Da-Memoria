@@ -1,4 +1,4 @@
-import marte from './assets/marte.jpg';
+import background from './assets/background.jpg'
 
 export interface CardProps {
     url: string,
@@ -16,7 +16,7 @@ export default function Card({ isTurned, url, id, handleClick}: CardProps) {
 
     return (
         <div onClick={() => handleClickis(id)} style={{ width: '120px', height: '120px' }}>
-            <img src={isTurned ? url : marte} style={{ width: '120px', height: '120px', borderRadius: '8px' }} />
+            <img src={isTurned ? url : background} style={{ width: '120px', height: '120px', borderRadius: '8px' }} />
         </div>
     )
 }
