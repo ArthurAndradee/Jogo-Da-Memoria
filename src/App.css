@@ -1,8 +1,16 @@
 .container {
-    background-color: transparent;
-    
     display: grid;
 
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     gap: 50px;
 }  
+
+.bruh {
+    bottom: 0;
+    right: 0;
+
+    margin-right:  2vw;
+    margin-bottom: 2vh;
+
+    position: absolute;
+}
