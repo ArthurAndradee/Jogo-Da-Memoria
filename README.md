@@ -4,10 +4,19 @@ Este é um jogo da memória simples desenvolvido com React e TypeScript, utiliza
 
 ## Pré-requisitos
 
-Antes de começar, certifique-se de ter o Node.js e o npm (ou yarn) instalados em sua máquina.
+Antes de começar, certifique-se de ter o Node.js e o npm instalados em sua máquina.
 
 ## Instalação
 
 1. Clone este repositório:
    ```bash
    git clone https://github.com/arthurandradee/jogo-da-memoria.git
+
+2. Instale as dependências:
+   ```bash
+   npm install
+   npm install bootstrap
+
+3. Executando o projeto:
+   ```
+   npm run dev
