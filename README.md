@@ -4,7 +4,7 @@ Este é um jogo da memória simples desenvolvido com React e TypeScript, utiliza
 
 ## Pré-requisitos
 
-Antes de começar, certifique-se de ter o Node.js e o npm instalados em sua máquina.
+Antes de começar, certifique-se de ter o Node.js e React instalados em sua máquina.
 
 ## Instalação
 
