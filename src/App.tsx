@@ -93,8 +93,8 @@ function App({ cards }: appProps) {
       {lst.map((card) => {
         return <Card {...card} key={card.id} handleClick={HandleClick} />;
       })}
-      <Modal isVisible={isModalVisible} onClose={handleCloseModal} onRestart={handleRestartGame} />
-      <div className=' bruh'>Feito por <a className="link-opacity-50 text-decoration-none" href="https://github.com/ArthurAndradee" target='_blank'>Arthur Andrade</a></div>
+      <Modal isVisible={isModalVisible} onClose={handleCloseModal} onRestart={handleRestartGame} numJogadas={numJogadas}/>
+      <div className='credits'>Feito por <a className="text-decoration-none" href="https://github.com/ArthurAndradee" target='_blank'>Arthur Andrade</a></div>
     </div>
   );
 }

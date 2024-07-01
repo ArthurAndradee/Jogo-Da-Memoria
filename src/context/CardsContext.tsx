@@ -1,4 +1,5 @@
 import { Dispatch, SetStateAction, createContext } from "react";
+
 interface CardsType{
     selected:number[],
     Setselected:Dispatch<SetStateAction<number[]>>,

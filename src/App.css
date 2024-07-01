@@ -5,12 +5,14 @@
     gap: 50px;
 }  
 
-.bruh {
+.credits {
     bottom: 0;
     right: 0;
 
     margin-right:  2vw;
-    margin-bottom: 2vh;
+    margin-bottom: 2vh; 
+
+    opacity: 0.3;
 
     position: absolute;
 }
