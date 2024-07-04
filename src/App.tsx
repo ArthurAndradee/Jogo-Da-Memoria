@@ -84,6 +84,16 @@ function App({ cards }: appProps) {
     window.location.reload();
   };
 
+  const handleInstantWin = () => {
+    const updatedList = lst.map((card) => {
+      card.isTurned = true;
+      return card;
+    });
+
+    Setlst(updatedList);
+    setIsModalVisible(true);
+  };
+
   useEffect(() => {
     winner();
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -94,6 +104,7 @@ function App({ cards }: appProps) {
       {lst.map((card) => {
         return <Card {...card} key={card.id} handleClick={HandleClick} />;
       })}
+      <button onClick={handleInstantWin}>Instant Win</button>
       <Modal isVisible={isModalVisible} onClose={handleCloseModal} onRestart={handleRestartGame} numJogadas={numJogadas}/>
       <div className='credits'>Feito por <a className="text-decoration-none" href="https://github.com/ArthurAndradee" target='_blank'>Arthur Andrade</a></div>
     </div>
