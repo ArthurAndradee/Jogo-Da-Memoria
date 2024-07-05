@@ -2,12 +2,13 @@ export interface CardProps {
     url: string,
     id: number,
     isTurned: boolean,
-    handleClick?: (id:number) => void,
+    handleClick?: (id: number) => void,
+    index?: number
 }
 
-export default function Card({ isTurned, url, id, handleClick}: CardProps) {
-    const handleClickis = (id:number) =>{
-        if(handleClick){
+export default function Card({ isTurned, url, id, handleClick, index }: CardProps) {
+    const handleClickis = (id: number) => {
+        if (handleClick) {
             handleClick(id);
         }
     }
@@ -23,8 +24,15 @@ export default function Card({ isTurned, url, id, handleClick}: CardProps) {
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 backgroundColor: isTurned ? 'transparent' : '#670000',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: 'white',
+                fontSize: '24px',
+                fontWeight: 'bold'
             }}
         >
+            {!isTurned && index !== undefined ? index + 1 : null}
         </div>
     )
 }

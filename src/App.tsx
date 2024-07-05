@@ -101,8 +101,8 @@ function App({ cards }: appProps) {
 
   return (
     <div className='container'>
-      {lst.map((card) => {
-        return <Card {...card} key={card.id} handleClick={HandleClick} />;
+      {lst.map((card, index) => {
+        return <Card {...card} key={card.id} handleClick={HandleClick} index={index} />;
       })}
       <button onClick={handleInstantWin}>Instant Win</button>
       <Modal isVisible={isModalVisible} onClose={handleCloseModal} onRestart={handleRestartGame} numJogadas={numJogadas}/>
