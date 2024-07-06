@@ -111,16 +111,6 @@ function App({ cards }: appProps) {
     window.location.reload();
   };
 
-  const handleInstantWin = () => {
-    const updatedList = lst.map((card) => {
-      card.isTurned = true;
-      return card;
-    });
-
-    Setlst(updatedList);
-    setIsModalVisible(true);
-  };
-
   const handleCloseMatchedCardsModal = () => {
     setMatchedCardsInfo(null);
   };
@@ -135,7 +125,6 @@ function App({ cards }: appProps) {
       {lst.map((card, index) => {
         return <Card {...card} key={card.id} handleClick={HandleClick} index={index} />;
       })}
-      <button onClick={handleInstantWin}>Instant Win</button>
       <Modal isVisible={isModalVisible} onClose={handleCloseModal} onRestart={handleRestartGame} numJogadas={numJogadas}/>
       {matchedCardsInfo && (
         <Description 
