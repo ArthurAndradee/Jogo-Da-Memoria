@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import { resetCardsSort } from './utils/cards_functions';
-import Card, { CardProps } from './components/Card';
-import centerCard from './assets/centerCard.jpg';
+import Card, { CardProps } from './components/Card/Card';
+import Description from './components/Description/Description';
+import centerCard from './assets/covers/centerCard.jpg';
 import Modal from './components/Modal/Modal';
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
-import Description from './components/Description/Description';
 
 export interface appProps {
   cards: CardProps[];
@@ -26,23 +26,23 @@ function App({ cards }: appProps) {
   const [matchedCardsInfo, setMatchedCardsInfo] = useState<{text: string, imageUrl: string} | null>(null); // New state for matched cards' info
 
   const cardImages = {
-    '/src/assets/one.jpg': '/src/assets/descriptions/one.PNG',
-    '/src/assets/two.jpg': '/src/assets/descriptions/two.PNG',
-    '/src/assets/three.jpg': '/src/assets/descriptions/three.PNG',
-    '/src/assets/four.jpg': '/src/assets/descriptions/four.PNG',
-    '/src/assets/five.jpg': '/src/assets/descriptions/five.PNG',
-    '/src/assets/six.jpg': '/src/assets/descriptions/six.PNG',
-    '/src/assets/seven.jpg': '/src/assets/descriptions/seven.PNG',
-    '/src/assets/eight.jpg': '/src/assets/descriptions/eight.PNG',
-    '/src/assets/nine.jpg': '/src/assets/descriptions/nine.PNG',
-    '/src/assets/ten.jpg': '/src/assets/descriptions/ten.PNG',
-    '/src/assets/eleven.jpg': '/src/assets/descriptions/eleven.PNG',
-    '/src/assets/twelve.jpg': '/src/assets/descriptions/twelve.PNG',
-    '/src/assets/thirteen.jpg': '/src/assets/descriptions/thirteen.PNG',
-    '/src/assets/fourteen.jpg': '/src/assets/descriptions/fourteen.PNG',
-    '/src/assets/fifteen.jpg': '/src/assets/descriptions/fifteen.PNG',
-    '/src/assets/sixteen.jpg': '/src/assets/descriptions/sixteen.PNG',
-    '/src/assets/seventeen.jpg': '/src/assets/descriptions/seventeen.PNG'
+    '/src/assets/Covers/one.jpg': '/src/assets/Descriptions/one.PNG',
+    '/src/assets/Covers/two.jpg': '/src/assets/Descriptions/two.PNG',
+    '/src/assets/Covers/three.jpg': '/src/assets/Descriptions/three.PNG',
+    '/src/assets/Covers/four.jpg': '/src/assets/Descriptions/four.PNG',
+    '/src/assets/Covers/five.jpg': '/src/assets/Descriptions/five.PNG',
+    '/src/assets/Covers/six.jpg': '/src/assets/Descriptions/six.PNG',
+    '/src/assets/Covers/seven.jpg': '/src/assets/Descriptions/seven.PNG',
+    '/src/assets/Covers/eight.jpg': '/src/assets/Descriptions/eight.PNG',
+    '/src/assets/Covers/nine.jpg': '/src/assets/Descriptions/nine.PNG',
+    '/src/assets/Covers/ten.jpg': '/src/assets/Descriptions/ten.PNG',
+    '/src/assets/Covers/eleven.jpg': '/src/assets/Descriptions/eleven.PNG',
+    '/src/assets/Covers/twelve.jpg': '/src/assets/Descriptions/twelve.PNG',
+    '/src/assets/Covers/thirteen.jpg': '/src/assets/Descriptions/thirteen.PNG',
+    '/src/assets/Covers/fourteen.jpg': '/src/assets/Descriptions/fourteen.PNG',
+    '/src/assets/Covers/fifteen.jpg': '/src/assets/Descriptions/fifteen.PNG',
+    '/src/assets/Covers/sixteen.jpg': '/src/assets/Descriptions/sixteen.PNG',
+    '/src/assets/Covers/seventeen.jpg': '/src/assets/Descriptions/seventeen.PNG'
 };
 
 

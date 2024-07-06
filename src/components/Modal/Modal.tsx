@@ -24,4 +24,4 @@ const Modal: React.FC<ModalProps> = ({ isVisible, onClose, onRestart, numJogadas
   );
 };
 
-export default Modal;
+export default Modal

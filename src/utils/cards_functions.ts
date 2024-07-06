@@ -1,4 +1,4 @@
-import { CardProps } from "../components/Card";
+import { CardProps } from "../components/Card/Card";
 
 export const resetCardsSort = (cards: CardProps[]): CardProps[] => {
     return sortCards(regeranteCard(duplicateCards(cards)));

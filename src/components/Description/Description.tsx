@@ -20,4 +20,4 @@ const Description: React.FC<DescriptionProps> = ({ isVisible, imageUrl, onClose 
   );
 }
 
-export default Description;
+export default Description
