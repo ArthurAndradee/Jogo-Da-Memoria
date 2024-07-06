@@ -13,6 +13,15 @@ export default function Card({ isTurned, url, id, handleClick, index }: CardProp
         }
     }
 
+    let displayNumber: number | null = null;
+    if (!isTurned && index !== undefined) {
+        if (index < 17) {
+            displayNumber = index + 1;
+        } else if (index > 17) {
+            displayNumber = index;
+        }
+    }
+
     return (
         <div
             onClick={() => handleClickis(id)}
@@ -23,7 +32,7 @@ export default function Card({ isTurned, url, id, handleClick, index }: CardProp
                 backgroundImage: isTurned ? `url(${url})` : 'none',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
-                backgroundColor: isTurned ? 'transparent' : '#670000',
+                backgroundColor: isTurned ? 'transparent' : '#960000',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -32,7 +41,7 @@ export default function Card({ isTurned, url, id, handleClick, index }: CardProp
                 fontWeight: 'bold'
             }}
         >
-            {!isTurned && index !== undefined ? index + 1 : null}
+            {displayNumber !== null ? displayNumber : null}
         </div>
     )
 }
