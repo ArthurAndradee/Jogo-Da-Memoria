@@ -1,13 +1,17 @@
 .card-container {
     width: 120px;
     height: 120px;
-    border-radius: 8px;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+
     font-size: 24px;
     font-weight: bold;
+    
+    color: white;
+
+    border-radius: 8px;
 }
 
 .card-turned {
@@ -16,4 +20,11 @@
 
 .card-not-turned {
     background-color: #960000;
+}
+
+@media only screen and (max-width: 1366px) {
+    .card-container {
+        height: 100px;
+        width:  100px;
+    }
 }
