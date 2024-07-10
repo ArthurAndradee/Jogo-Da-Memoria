@@ -144,21 +144,28 @@ function App({ cards }: AppProps) {
 
 
   return (
-    <div className='container'>
-      {lst.map((card, index) => {
-        return <Card {...card} key={card.id} handleClick={handleClick} index={index} />;
-      })}
-      <Modal isVisible={isModalVisible} onClose={handleCloseModal} onRestart={handleRestartGame} numJogadas={numJogadas} />
-      {matchedCardsInfo && (
-        <Description
-          isVisible={!!matchedCardsInfo}
-          imageUrl={matchedCardsInfo?.imageUrl || ''}
-          onClose={handleCloseMatchedCardsModal}
-        />
-      )}
-      <button className='btn btn-primary' onClick={handleInstantWin}>Instant Win</button>
-      <Restart isVisible={isReplayButtonVisible} onClick={handleRestartGame} />
-      <div className='credits'>Feito por <a className="text-decoration-none" href="https://github.com/ArthurAndradee" target='_blank'>Arthur Andrade</a></div>
+    <div className='d-flex flex-column'>
+      <h1 className='text-center mt-3'>Jogo da Memória</h1>
+      <div className='container'>
+        {lst.map((card, index) => {
+          return <Card {...card} key={card.id} handleClick={handleClick} index={index} />;
+        })}
+        <Modal isVisible={isModalVisible} onClose={handleCloseModal} onRestart={handleRestartGame} numJogadas={numJogadas} />
+        {matchedCardsInfo && (
+          <Description
+            isVisible={!!matchedCardsInfo}
+            imageUrl={matchedCardsInfo?.imageUrl || ''}
+            onClose={handleCloseMatchedCardsModal}
+          />
+        )}
+        <button className='btn btn-primary' onClick={handleInstantWin}>Instant Win</button>
+        <Restart isVisible={isReplayButtonVisible} onClick={handleRestartGame} />
+      </div>
+        <div className='creditsContainer'>
+          <div className='credits'>Feito por <a className="text-decoration-none" href="https://github.com/ArthurAndradee" target='_blank'>Arthur Andrade</a></div>
+          <div className='credits'>Apresentado por <a className="text-decoration-none" style={{color:'#006d31'}} href="https://github.com/ArthurAndradee" target='_blank'>Karina Flores</a></div>
+          <div className='credits'>Parceria  <a className="text-decoration-none" style={{color:'#6d0000', fontWeight:'900'}} href="https://github.com/ArthurAndradee" target='_blank'>Uniritter</a></div>
+        </div>
     </div>
   );
 }
