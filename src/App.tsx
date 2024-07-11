@@ -6,26 +6,39 @@ import centerCard from './assets/covers/centerCard.jpg';
 import Modal from './components/Modal/Modal';
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
+import Restart from './components/Restart/Restart';
 
-export interface appProps {
+export interface AppProps {
   cards: CardProps[];
 }
 
-function App({ cards }: appProps) {
-  const [selected, Setselected] = useState<string[]>([]);
-  const [click, Setclick] = useState(0);
+export interface CardState {
+  url: string;
+  id: number;
+  isTurned: boolean;
+}
+
+export interface MatchedCardsInfo {
+  text: string;
+  imageUrl: string;
+}
+
+function App({ cards }: AppProps) {
+  const [selected, setSelected] = useState<string[]>([]);
+  const [click, setClick] = useState<number>(0);
   const staticCardId = 999;
-  const [lst, Setlst] = useState(() => {
+  const [lst, setLst] = useState<CardState[]>(() => {
     const sortedCards = resetCardsSort(cards);
-    const staticCard = { url: centerCard, id: staticCardId, isTurned: false };
+    const staticCard: CardState = { url: centerCard, id: staticCardId, isTurned: false };
     sortedCards.splice(17, 0, staticCard);
     return sortedCards;
   });
-  const [numJogadas, SetnumJogadas] = useState(0);
-  const [isModalVisible, setIsModalVisible] = useState(false);
-  const [matchedCardsInfo, setMatchedCardsInfo] = useState<{text: string, imageUrl: string} | null>(null); // New state for matched cards' info
+  const [numJogadas, setNumJogadas] = useState<number>(0);
+  const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
+  const [isReplayButtonVisible, setIsReplayButtonVisible] = useState<boolean>(false);
+  const [matchedCardsInfo, setMatchedCardsInfo] = useState<MatchedCardsInfo | null>(null);
 
-  const cardImages = {
+  const cardImages: Record<string, string> = {
     '/src/assets/Covers/one.jpg': '/src/assets/Descriptions/one.PNG',
     '/src/assets/Covers/two.jpg': '/src/assets/Descriptions/two.PNG',
     '/src/assets/Covers/three.jpg': '/src/assets/Descriptions/three.PNG',
@@ -42,9 +55,8 @@ function App({ cards }: appProps) {
     '/src/assets/Covers/fourteen.jpg': '/src/assets/Descriptions/fourteen.PNG',
     '/src/assets/Covers/fifteen.jpg': '/src/assets/Descriptions/fifteen.PNG',
     '/src/assets/Covers/sixteen.jpg': '/src/assets/Descriptions/sixteen.PNG',
-    '/src/assets/Covers/seventeen.jpg': '/src/assets/Descriptions/seventeen.PNG'
-};
-
+    '/src/assets/Covers/seventeen.jpg': '/src/assets/Descriptions/seventeen.PNG',
+  };
 
   const turnCard = (url1: string, url2: string) => {
     const turn = lst.map((card) => {
@@ -53,10 +65,10 @@ function App({ cards }: appProps) {
       }
       return card;
     });
-    Setlst(turn);
+    setLst(turn);
   };
 
-  const HandleClick = (id: number) => {
+  const handleClick = (id: number) => {
     if (id === staticCardId) return;
 
     const check = lst.map((card) => {
@@ -65,26 +77,26 @@ function App({ cards }: appProps) {
       if (card.isTurned === false) {
         if (selected.length < 2) {
           card.isTurned = true;
-          Setselected([...selected, card.url]);
-          SetnumJogadas(numJogadas + 1);
+          setSelected([...selected, card.url]);
+          setNumJogadas(numJogadas + 1);
         } else if (selected.length === 2) {
           if (selected[0] !== selected[1]) {
             turnCard(selected[0], selected[1]);
-            Setselected([]);
+            setSelected([]);
           } else {
             setMatchedCardsInfo({
               text: `You matched the cards: ${selected[0]} and ${selected[1]}`,
               imageUrl: cardImages[selected[0]] || ''
             });
-            Setselected([]);
+            setSelected([]);
           }
         }
       }
-      Setclick(click + 1);
+      setClick(click + 1);
 
       return card;
     });
-    Setlst(check);
+    setLst(check);
   };
 
   const winner = () => {
@@ -98,8 +110,9 @@ function App({ cards }: appProps) {
         return card;
       });
 
-      Setlst(updatedList);
-      setIsModalVisible(true); 
+      setLst(updatedList);
+      setIsModalVisible(true);
+      setIsReplayButtonVisible(true);
     }
   };
 
@@ -115,24 +128,35 @@ function App({ cards }: appProps) {
     setMatchedCardsInfo(null);
   };
 
+  const handleInstantWin = () => {
+    const updatedList = lst.map((card) => {
+      card.isTurned = true;
+      return card;
+    });
+
+    setLst(updatedList);
+    setIsModalVisible(true);
+  };
+
   useEffect(() => {
     winner();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [numJogadas]);
 
   return (
     <div className='container'>
       {lst.map((card, index) => {
-        return <Card {...card} key={card.id} handleClick={HandleClick} index={index} />;
+        return <Card {...card} key={card.id} handleClick={handleClick} index={index} />;
       })}
-      <Modal isVisible={isModalVisible} onClose={handleCloseModal} onRestart={handleRestartGame} numJogadas={numJogadas}/>
+      <Modal isVisible={isModalVisible} onClose={handleCloseModal} onRestart={handleRestartGame} numJogadas={numJogadas} />
       {matchedCardsInfo && (
-        <Description 
+        <Description
           isVisible={!!matchedCardsInfo}
           imageUrl={matchedCardsInfo?.imageUrl || ''}
           onClose={handleCloseMatchedCardsModal}
         />
       )}
+      <button className='btn btn-primary' onClick={handleInstantWin}>Instant Win</button>
+      <Restart isVisible={isReplayButtonVisible} onClick={handleRestartGame} />
       <div className='credits'>Feito por <a className="text-decoration-none" href="https://github.com/ArthurAndradee" target='_blank'>Arthur Andrade</a></div>
     </div>
   );
