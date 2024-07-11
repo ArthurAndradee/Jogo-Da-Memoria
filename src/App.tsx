@@ -49,7 +49,7 @@ function App({ cards }: AppProps) {
     '/src/assets/backgrounds/eight.jpg': '/src/assets/descriptions/eight.png',
     '/src/assets/backgrounds/nine.jpg': '/src/assets/descriptions/nine.png',
     '/src/assets/backgrounds/ten.jpg': '/src/assets/descriptions/ten.png',
-    '/src/assets/backgrounds/eleven.jpg': '/src/assets/descr iptions/eleven.png',
+    '/src/assets/backgrounds/eleven.jpg': '/src/assets/descriptions/eleven.png',
     '/src/assets/backgrounds/twelve.jpg': '/src/assets/descriptions/twelve.png',
     '/src/assets/backgrounds/thirteen.jpg': '/src/assets/descriptions/thirteen.png',
     '/src/assets/backgrounds/fourteen.jpg': '/src/assets/descriptions/fourteen.png',
