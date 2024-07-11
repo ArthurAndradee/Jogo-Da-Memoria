@@ -1,20 +1,20 @@
-import one from '../assets/covers/one.jpg';
-import two from '../assets/covers/two.jpg';
-import three from '../assets/covers/three.jpg';
-import four from '../assets/covers/four.jpg';
-import five from '../assets/covers/five.jpg';
-import six from '../assets/covers/six.jpg';
-import seven from '../assets/covers/seven.jpg';
-import eight from '../assets/covers/eight.jpg';
-import nine from '../assets/covers/nine.jpg';
-import ten from '../assets/covers/ten.jpg';
-import eleven from '../assets/covers/eleven.jpg';
-import twelve from '../assets/covers/twelve.jpg';
-import thirteen from '../assets/covers/thirteen.jpg';
-import fourteen from '../assets/covers/fourteen.jpg';
-import fifteen from '../assets/covers/fifteen.jpg';
-import sixteen from '../assets/covers/sixteen.jpg';
-import seventeen from '../assets/covers/seventeen.jpg';
+import one from '../assets/backgrounds/one.jpg';
+import two from '../assets/backgrounds/two.jpg';
+import three from '../assets/backgrounds/three.jpg';
+import four from '../assets/backgrounds/four.jpg';
+import five from '../assets/backgrounds/five.jpg';
+import six from '../assets/backgrounds/six.jpg';
+import seven from '../assets/backgrounds/seven.jpg';
+import eight from '../assets/backgrounds/eight.jpg';
+import nine from '../assets/backgrounds/nine.jpg';
+import ten from '../assets/backgrounds/ten.jpg';
+import eleven from '../assets/backgrounds/eleven.jpg';
+import twelve from '../assets/backgrounds/twelve.jpg';
+import thirteen from '../assets/backgrounds/thirteen.jpg';
+import fourteen from '../assets/backgrounds/fourteen.jpg';
+import fifteen from '../assets/backgrounds/fifteen.jpg';
+import sixteen from '../assets/backgrounds/sixteen.jpg';
+import seventeen from '../assets/backgrounds/seventeen.jpg';
 
 
 export const Cards = [

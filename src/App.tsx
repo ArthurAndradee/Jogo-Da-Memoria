@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { resetCardsSort } from './utils/cards_functions';
 import Card, { CardProps } from './components/Card/Card';
 import Description from './components/Description/Description';
-import centerCard from './assets/covers/centerCard.jpg';
+import centerCard from './assets/backgrounds/centerCard.jpg';
 import Modal from './components/Modal/Modal';
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
@@ -39,23 +39,23 @@ function App({ cards }: AppProps) {
   const [matchedCardsInfo, setMatchedCardsInfo] = useState<MatchedCardsInfo | null>(null);
 
   const cardImages: Record<string, string> = {
-    '/src/assets/covers/one.jpg': '/src/assets/descriptions/one.PNG',
-    '/src/assets/covers/two.jpg': '/src/assets/descriptions/two.PNG',
-    '/src/assets/covers/three.jpg': '/src/assets/descriptions/three.PNG',
-    '/src/assets/covers/four.jpg': '/src/assets/descriptions/four.PNG',
-    '/src/assets/covers/five.jpg': '/src/assets/descriptions/five.PNG',
-    '/src/assets/covers/six.jpg': '/src/assets/descriptions/six.PNG',
-    '/src/assets/covers/seven.jpg': '/src/assets/descriptions/seven.PNG',
-    '/src/assets/covers/eight.jpg': '/src/assets/descriptions/eight.PNG',
-    '/src/assets/covers/nine.jpg': '/src/assets/descriptions/nine.PNG',
-    '/src/assets/covers/ten.jpg': '/src/assets/descriptions/ten.PNG',
-    '/src/assets/covers/eleven.jpg': '/src/assets/descr iptions/eleven.PNG',
-    '/src/assets/covers/twelve.jpg': '/src/assets/descriptions/twelve.PNG',
-    '/src/assets/covers/thirteen.jpg': '/src/assets/descriptions/thirteen.PNG',
-    '/src/assets/covers/fourteen.jpg': '/src/assets/descriptions/fourteen.PNG',
-    '/src/assets/covers/fifteen.jpg': '/src/assets/descriptions/fifteen.PNG',
-    '/src/assets/covers/sixteen.jpg': '/src/assets/descriptions/sixteen.PNG',
-    '/src/assets/covers/seventeen.jpg': '/src/assets/descriptions/seventeen.PNG',
+    '/src/assets/backgrounds/one.jpg': '/src/assets/descriptions/one.PNG',
+    '/src/assets/backgrounds/two.jpg': '/src/assets/descriptions/two.PNG',
+    '/src/assets/backgrounds/three.jpg': '/src/assets/descriptions/three.PNG',
+    '/src/assets/backgrounds/four.jpg': '/src/assets/descriptions/four.PNG',
+    '/src/assets/backgrounds/five.jpg': '/src/assets/descriptions/five.PNG',
+    '/src/assets/backgrounds/six.jpg': '/src/assets/descriptions/six.PNG',
+    '/src/assets/backgrounds/seven.jpg': '/src/assets/descriptions/seven.PNG',
+    '/src/assets/backgrounds/eight.jpg': '/src/assets/descriptions/eight.PNG',
+    '/src/assets/backgrounds/nine.jpg': '/src/assets/descriptions/nine.PNG',
+    '/src/assets/backgrounds/ten.jpg': '/src/assets/descriptions/ten.PNG',
+    '/src/assets/backgrounds/eleven.jpg': '/src/assets/descr iptions/eleven.PNG',
+    '/src/assets/backgrounds/twelve.jpg': '/src/assets/descriptions/twelve.PNG',
+    '/src/assets/backgrounds/thirteen.jpg': '/src/assets/descriptions/thirteen.PNG',
+    '/src/assets/backgrounds/fourteen.jpg': '/src/assets/descriptions/fourteen.PNG',
+    '/src/assets/backgrounds/fifteen.jpg': '/src/assets/descriptions/fifteen.PNG',
+    '/src/assets/backgrounds/sixteen.jpg': '/src/assets/descriptions/sixteen.PNG',
+    '/src/assets/backgrounds/seventeen.jpg': '/src/assets/descriptions/seventeen.PNG',
   };
 
   const turnCard = (url1: string, url2: string) => {
@@ -141,7 +141,7 @@ function App({ cards }: AppProps) {
   useEffect(() => {
     winner();
   }, [numJogadas]);
-  
+
 
   return (
     <div className='container'>
