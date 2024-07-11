@@ -141,6 +141,7 @@ function App({ cards }: AppProps) {
   useEffect(() => {
     winner();
   }, [numJogadas]);
+  
 
   return (
     <div className='container'>
