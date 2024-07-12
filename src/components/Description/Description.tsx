@@ -23,12 +23,12 @@ const Description: React.FC<DescriptionProps> = ({ isVisible, imageUrl, onClose 
   return (
     <div className='description-cards-modal'>
       <div className='description-cards-content'>
+        {loading ? (
           <div className='loading-spinner'>
           </div>
-        {/* {loading ? (
         ) : (
           <img src={imageUrl} alt="description cards" />
-        )} */}
+        )}
         <button className='btn btn-dark btn-lg w-25' onClick={onClose}>Fechar</button>
       </div>
     </div>
