@@ -34,25 +34,33 @@
 }
 
 .loading-spinner {
-    width: 204px;
-    height: 204px;
+    width:  10rem;
+    height: 10rem;
+    
+    margin: auto;
+    margin-bottom: 5vh;
+
     border-radius: 50%;
+
     position: relative;
-    animation: rotate 1s linear infinite
+    animation: rotate 1s linear infinite;
 }
 
 .loading-spinner::before {
   content: "";
+  
   box-sizing: border-box;
-  position: absolute;
   inset: 0px;
+  
   border-radius: 50%;
   border: 5px solid #7e7e7e;
+  
+  position: absolute;
   animation: prixClipFix 2s linear infinite ;
 }
 
 @keyframes rotate {
-  100%   {transform: rotate(360deg)}
+    100%   {transform: rotate(360deg)}
 }
 
 @keyframes prixClipFix {
