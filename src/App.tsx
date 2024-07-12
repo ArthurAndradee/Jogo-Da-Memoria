@@ -156,7 +156,6 @@ function App({ cards }: AppProps) {
           onClose={handleCloseMatchedCardsModal}
         />
       )}
-      <img src={centerCard} width={'50'} height={'50'}/>
       <button className='btn btn-primary' onClick={handleInstantWin}>Instant Win</button>
       <Restart isVisible={isReplayButtonVisible} onClick={handleRestartGame} />
       <div className='credits'>Feito por <a className="text-decoration-none" href="https://github.com/ArthurAndradee" target='_blank'>Arthur Andrade</a></div>
