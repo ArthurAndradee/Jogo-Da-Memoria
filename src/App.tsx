@@ -185,7 +185,7 @@ function App({ cards }: AppProps) {
   return (
     <div className='d-flex flex-column main'>
       <h1 className='text-center mt-3'>Jogo da Memória</h1>
-      <div className='container border'>
+      <div className='container'>
         {lst.map((card, index) => {
           return <Card {...card} key={card.id} handleClick={handleClick} index={index} />;
         })}
