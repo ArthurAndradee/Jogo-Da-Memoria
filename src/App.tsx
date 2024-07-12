@@ -8,43 +8,6 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 import Restart from './components/Restart/Restart';
 
-import one from './assets/backgrounds/one.jpg';
-import two from './assets/backgrounds/two.jpg';
-import three from './assets/backgrounds/three.jpg';
-import four from './assets/backgrounds/four.jpg';
-import five from './assets/backgrounds/five.jpg';
-import six from './assets/backgrounds/six.jpg';
-import seven from './assets/backgrounds/seven.jpg';
-import eight from './assets/backgrounds/eight.jpg';
-import nine from './assets/backgrounds/nine.jpg';
-import ten from './assets/backgrounds/ten.jpg';
-import eleven from './assets/backgrounds/eleven.jpg';
-import twelve from './assets/backgrounds/twelve.jpg';
-import thirteen from './assets/backgrounds/thirteen.jpg';
-import fourteen from './assets/backgrounds/fourteen.jpg';
-import fifteen from './assets/backgrounds/fifteen.jpg';
-import sixteen from './assets/backgrounds/sixteen.jpg';
-import seventeen from './assets/backgrounds/seventeen.jpg';
-
-import oneDesc from './assets/descriptions/one.png';
-import twoDesc from './assets/descriptions/two.png';
-import threeDesc from './assets/descriptions/three.png';
-import fourDesc from './assets/descriptions/four.png';
-import fiveDesc from './assets/descriptions/five.png';
-import sixDesc from './assets/descriptions/six.png';
-import sevenDesc from './assets/descriptions/seven.png';
-import eightDesc from './assets/descriptions/eight.png';
-import nineDesc from './assets/descriptions/nine.png';
-import tenDesc from './assets/descriptions/ten.png';
-import elevenDesc from './assets/descriptions/eleven.png';
-import twelveDesc from './assets/descriptions/twelve.png';
-import thirteenDesc from './assets/descriptions/thirteen.png';
-import fourteenDesc from './assets/descriptions/fourteen.png';
-import fifteenDesc from './assets/descriptions/fifteen.png';
-import sixteenDesc from './assets/descriptions/sixteen.png';
-import seventeenDesc from './assets/descriptions/seventeen.png';
-
-
 export interface AppProps {
   cards: CardProps[];
 }
@@ -60,27 +23,6 @@ export interface MatchedCardsInfo {
   imageUrl: string;
 }
 
-const cardImages: Record<string, string> = {
-  [one]: oneDesc,
-  [two]: twoDesc,
-  [three]: threeDesc,
-  [four]: fourDesc,
-  [five]: fiveDesc,
-  [six]: sixDesc,
-  [seven]: sevenDesc,
-  [eight]: eightDesc,
-  [nine]: nineDesc,
-  [ten]: tenDesc,
-  [eleven]: elevenDesc,
-  [twelve]: twelveDesc,
-  [thirteen]: thirteenDesc,
-  [fourteen]: fourteenDesc,
-  [fifteen]: fifteenDesc,
-  [sixteen]: sixteenDesc,
-  [seventeen]: seventeenDesc,
-};
-
-
 function App({ cards }: AppProps) {
   const [selected, setSelected] = useState<string[]>([]);
   const [click, setClick] = useState<number>(0);
@@ -95,6 +37,26 @@ function App({ cards }: AppProps) {
   const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
   const [isReplayButtonVisible, setIsReplayButtonVisible] = useState<boolean>(false);
   const [matchedCardsInfo, setMatchedCardsInfo] = useState<MatchedCardsInfo | null>(null);
+
+  const cardImages: Record<string, string> = {
+    '/src/assets/backgrounds/one.jpg': '/src/assets/descriptions/one.png',
+    '/src/assets/backgrounds/two.jpg': '/src/assets/descriptions/two.png',
+    '/src/assets/backgrounds/three.jpg': '/src/assets/descriptions/three.png',
+    '/src/assets/backgrounds/four.jpg': '/src/assets/descriptions/four.png',
+    '/src/assets/backgrounds/five.jpg': '/src/assets/descriptions/five.png',
+    '/src/assets/backgrounds/six.jpg': '/src/assets/descriptions/six.png',
+    '/src/assets/backgrounds/seven.jpg': '/src/assets/descriptions/seven.png',
+    '/src/assets/backgrounds/eight.jpg': '/src/assets/descriptions/eight.png',
+    '/src/assets/backgrounds/nine.jpg': '/src/assets/descriptions/nine.png',
+    '/src/assets/backgrounds/ten.jpg': '/src/assets/descriptions/ten.png',
+    '/src/assets/backgrounds/eleven.jpg': '/src/assets/descriptions/eleven.png',
+    '/src/assets/backgrounds/twelve.jpg': '/src/assets/descriptions/twelve.png',
+    '/src/assets/backgrounds/thirteen.jpg': '/src/assets/descriptions/thirteen.png',
+    '/src/assets/backgrounds/fourteen.jpg': '/src/assets/descriptions/fourteen.png',
+    '/src/assets/backgrounds/fifteen.jpg': '/src/assets/descriptions/fifteen.png',
+    '/src/assets/backgrounds/sixteen.jpg': '/src/assets/descriptions/sixteen.png',
+    '/src/assets/backgrounds/seventeen.jpg': '/src/assets/descriptions/seventeen.png',
+  };
 
   const turnCard = (url1: string, url2: string) => {
     const turn = lst.map((card) => {
@@ -194,7 +156,7 @@ function App({ cards }: AppProps) {
           onClose={handleCloseMatchedCardsModal}
         />
       )}
-      <img src={centerCard} width="50" height="500" alt="Center Card" />
+      <img src={centerCard} width={'50'} height={'50'}/>
       <button className='btn btn-primary' onClick={handleInstantWin}>Instant Win</button>
       <Restart isVisible={isReplayButtonVisible} onClick={handleRestartGame} />
       <div className='credits'>Feito por <a className="text-decoration-none" href="https://github.com/ArthurAndradee" target='_blank'>Arthur Andrade</a></div>
