@@ -29,7 +29,7 @@ const Description: React.FC<DescriptionProps> = ({ isVisible, imageUrl, onClose 
         ) : (
           <img src={imageUrl} alt="description cards" />
         )}
-        <button className='btn btn-dark btn-lg w-25' onClick={onClose}>Fechar</button>
+        <button className='btn btn-dark btn-lg w-50' onClick={onClose}>Fechar</button>
       </div>
     </div>
   );

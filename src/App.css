@@ -1,16 +1,25 @@
 .container {
     display: grid;
-
+    
     margin-top: 3vh;
-
+    
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     gap: 50px;
 }  
 
 .creditsContainer {
+    margin-top: 100px;
     padding-right: 10px;
-
+    
     text-align: end;
+}
+
+.btn-primary {
+    width: 200px;
+}
+
+.btn-dark {
+    width: 100px;
 }
 
 .credits {
@@ -20,5 +29,29 @@
 @media only screen and (max-width: 1366px) {
     .container {
         gap: 30px;
+    }
+    
+    .card-container {
+        height: 100px;
+        width:  100px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .container {
+        width: 70vw;
+        
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 10px;
+    }
+    
+    .card-container {
+        height: 70px;
+        width:  70px;
+    }
+    
+    .btn-primary {
+        font-size: 13px;
+        width: 100px;
     }
 }
