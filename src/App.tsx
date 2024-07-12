@@ -8,6 +8,42 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 import Restart from './components/Restart/Restart';
 
+import oneBg from './assets/backgrounds/one.jpg';
+import twoBg from './assets/backgrounds/two.jpg';
+import threeBg from './assets/backgrounds/three.jpg';
+import fourBg from './assets/backgrounds/four.jpg';
+import fiveBg from './assets/backgrounds/five.jpg';
+import sixBg from './assets/backgrounds/six.jpg';
+import sevenBg from './assets/backgrounds/seven.jpg';
+import eightBg from './assets/backgrounds/eight.jpg';
+import nineBg from './assets/backgrounds/nine.jpg';
+import tenBg from './assets/backgrounds/ten.jpg';
+import elevenBg from './assets/backgrounds/eleven.jpg';
+import twelveBg from './assets/backgrounds/twelve.jpg';
+import thirteenBg from './assets/backgrounds/thirteen.jpg';
+import fourteenBg from './assets/backgrounds/fourteen.jpg';
+import fifteenBg from './assets/backgrounds/fifteen.jpg';
+import sixteenBg from './assets/backgrounds/sixteen.jpg';
+import seventeenBg from './assets/backgrounds/seventeen.jpg';
+
+import oneDesc from './assets/descriptions/one.png';
+import twoDesc from './assets/descriptions/two.png';
+import threeDesc from './assets/descriptions/three.png';
+import fourDesc from './assets/descriptions/four.png';
+import fiveDesc from './assets/descriptions/five.png';
+import sixDesc from './assets/descriptions/six.png';
+import sevenDesc from './assets/descriptions/seven.png';
+import eightDesc from './assets/descriptions/eight.png';
+import nineDesc from './assets/descriptions/nine.png';
+import tenDesc from './assets/descriptions/ten.png';
+import elevenDesc from './assets/descriptions/eleven.png';
+import twelveDesc from './assets/descriptions/twelve.png';
+import thirteenDesc from './assets/descriptions/thirteen.png';
+import fourteenDesc from './assets/descriptions/fourteen.png';
+import fifteenDesc from './assets/descriptions/fifteen.png';
+import sixteenDesc from './assets/descriptions/sixteen.png';
+import seventeenDesc from './assets/descriptions/seventeen.png';
+
 export interface AppProps {
   cards: CardProps[];
 }
@@ -24,23 +60,23 @@ export interface MatchedCardsInfo {
 }
 
 const cardImages = [
-  { backgroundImage: '/src/assets/backgrounds/one.jpg', descriptionImage: '/src/assets/descriptions/one.png' },
-  { backgroundImage: '/src/assets/backgrounds/two.jpg', descriptionImage: '/src/assets/descriptions/two.png' },
-  { backgroundImage: '/src/assets/backgrounds/three.jpg', descriptionImage: '/src/assets/descriptions/three.png' },
-  { backgroundImage: '/src/assets/backgrounds/four.jpg', descriptionImage: '/src/assets/descriptions/four.png' },
-  { backgroundImage: '/src/assets/backgrounds/five.jpg', descriptionImage: '/src/assets/descriptions/five.png' },
-  { backgroundImage: '/src/assets/backgrounds/six.jpg', descriptionImage: '/src/assets/descriptions/six.png' },
-  { backgroundImage: '/src/assets/backgrounds/seven.jpg', descriptionImage: '/src/assets/descriptions/seven.png' },
-  { backgroundImage: '/src/assets/backgrounds/eight.jpg', descriptionImage: '/src/assets/descriptions/eight.png' },
-  { backgroundImage: '/src/assets/backgrounds/nine.jpg', descriptionImage: '/src/assets/descriptions/nine.png' },
-  { backgroundImage: '/src/assets/backgrounds/ten.jpg', descriptionImage: '/src/assets/descriptions/ten.png' },
-  { backgroundImage: '/src/assets/backgrounds/eleven.jpg', descriptionImage: '/src/assets/descriptions/eleven.png' },
-  { backgroundImage: '/src/assets/backgrounds/twelve.jpg', descriptionImage: '/src/assets/descriptions/twelve.png' },
-  { backgroundImage: '/src/assets/backgrounds/thirteen.jpg', descriptionImage: '/src/assets/descriptions/thirteen.png' },
-  { backgroundImage: '/src/assets/backgrounds/fourteen.jpg', descriptionImage: '/src/assets/descriptions/fourteen.png' },
-  { backgroundImage: '/src/assets/backgrounds/fifteen.jpg', descriptionImage: '/src/assets/descriptions/fifteen.png' },
-  { backgroundImage: '/src/assets/backgrounds/sixteen.jpg', descriptionImage: '/src/assets/descriptions/sixteen.png' },
-  { backgroundImage: '/src/assets/backgrounds/seventeen.jpg', descriptionImage: '/src/assets/descriptions/seventeen.png' },
+  { backgroundImage: oneBg, descriptionImage: oneDesc },
+  { backgroundImage: twoBg, descriptionImage: twoDesc },
+  { backgroundImage: threeBg, descriptionImage: threeDesc },
+  { backgroundImage: fourBg, descriptionImage: fourDesc },
+  { backgroundImage: fiveBg, descriptionImage: fiveDesc },
+  { backgroundImage: sixBg, descriptionImage: sixDesc },
+  { backgroundImage: sevenBg, descriptionImage: sevenDesc },
+  { backgroundImage: eightBg, descriptionImage: eightDesc },
+  { backgroundImage: nineBg, descriptionImage: nineDesc },
+  { backgroundImage: tenBg, descriptionImage: tenDesc },
+  { backgroundImage: elevenBg, descriptionImage: elevenDesc },
+  { backgroundImage: twelveBg, descriptionImage: twelveDesc },
+  { backgroundImage: thirteenBg, descriptionImage: thirteenDesc },
+  { backgroundImage: fourteenBg, descriptionImage: fourteenDesc },
+  { backgroundImage: fifteenBg, descriptionImage: fifteenDesc },
+  { backgroundImage: sixteenBg, descriptionImage: sixteenDesc },
+  { backgroundImage: seventeenBg, descriptionImage: seventeenDesc },
 ];
 
 function App({ cards }: AppProps) {
