@@ -6,13 +6,17 @@ interface RestartProps {
 }
 
 function Restart({ isVisible, onClick }: RestartProps) {
-    if (isVisible) return null;
+    console.log(isVisible)
 
-    return (
-        <button className='btn btn-light' onClick={onClick}>
-            Restart
-        </button>
-    );
+    if (!isVisible) { 
+        return null
+    } else {
+        return (
+            <button className='btn btn-secondary w-100' onClick={onClick}>
+                Jogar de novo
+            </button>
+        );
+    }
 }
 
 export default Restart;

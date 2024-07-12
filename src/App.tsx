@@ -173,11 +173,14 @@ function App({ cards }: AppProps) {
 
     setLst(updatedList);
     setIsModalVisible(true);
+    setIsReplayButtonVisible(true)
   };
 
   useEffect(() => {
     winner();
   }, [numJogadas]);
+
+  console.log(isReplayButtonVisible)
 
   return (
     <div className='d-flex flex-column'>
@@ -194,7 +197,7 @@ function App({ cards }: AppProps) {
             onClose={handleCloseMatchedCardsModal}
           />
         )}
-        <button className='btn btn-primary' onClick={handleInstantWin}>Instant Win</button>
+        <button className='btn btn-primary' onClick={handleInstantWin}>Virar todas as cartas</button>
         <Restart isVisible={isReplayButtonVisible} onClick={handleRestartGame} />
       </div>
       <div className='creditsContainer'>
