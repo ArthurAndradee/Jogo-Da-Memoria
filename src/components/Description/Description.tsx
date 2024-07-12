@@ -25,7 +25,7 @@ const Description: React.FC<DescriptionProps> = ({ isVisible, imageUrl, onClose 
       <div className='description-cards-content'>
         {loading ? (
           <div className='loading-spinner'>
-            Still Loading...
+            Still Loading 2: Electric Bogaloo...
           </div>
         ) : (
           <img src={imageUrl} alt="description cards" />

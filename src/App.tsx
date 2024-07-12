@@ -23,6 +23,26 @@ export interface MatchedCardsInfo {
   imageUrl: string;
 }
 
+const cardImages = [
+  { backgroundImage: '/src/assets/backgrounds/one.jpg', descriptionImage: '/src/assets/descriptions/one.png' },
+  { backgroundImage: '/src/assets/backgrounds/two.jpg', descriptionImage: '/src/assets/descriptions/two.png' },
+  { backgroundImage: '/src/assets/backgrounds/three.jpg', descriptionImage: '/src/assets/descriptions/three.png' },
+  { backgroundImage: '/src/assets/backgrounds/four.jpg', descriptionImage: '/src/assets/descriptions/four.png' },
+  { backgroundImage: '/src/assets/backgrounds/five.jpg', descriptionImage: '/src/assets/descriptions/five.png' },
+  { backgroundImage: '/src/assets/backgrounds/six.jpg', descriptionImage: '/src/assets/descriptions/six.png' },
+  { backgroundImage: '/src/assets/backgrounds/seven.jpg', descriptionImage: '/src/assets/descriptions/seven.png' },
+  { backgroundImage: '/src/assets/backgrounds/eight.jpg', descriptionImage: '/src/assets/descriptions/eight.png' },
+  { backgroundImage: '/src/assets/backgrounds/nine.jpg', descriptionImage: '/src/assets/descriptions/nine.png' },
+  { backgroundImage: '/src/assets/backgrounds/ten.jpg', descriptionImage: '/src/assets/descriptions/ten.png' },
+  { backgroundImage: '/src/assets/backgrounds/eleven.jpg', descriptionImage: '/src/assets/descriptions/eleven.png' },
+  { backgroundImage: '/src/assets/backgrounds/twelve.jpg', descriptionImage: '/src/assets/descriptions/twelve.png' },
+  { backgroundImage: '/src/assets/backgrounds/thirteen.jpg', descriptionImage: '/src/assets/descriptions/thirteen.png' },
+  { backgroundImage: '/src/assets/backgrounds/fourteen.jpg', descriptionImage: '/src/assets/descriptions/fourteen.png' },
+  { backgroundImage: '/src/assets/backgrounds/fifteen.jpg', descriptionImage: '/src/assets/descriptions/fifteen.png' },
+  { backgroundImage: '/src/assets/backgrounds/sixteen.jpg', descriptionImage: '/src/assets/descriptions/sixteen.png' },
+  { backgroundImage: '/src/assets/backgrounds/seventeen.jpg', descriptionImage: '/src/assets/descriptions/seventeen.png' },
+];
+
 function App({ cards }: AppProps) {
   const [selected, setSelected] = useState<string[]>([]);
   const [click, setClick] = useState<number>(0);
@@ -37,26 +57,6 @@ function App({ cards }: AppProps) {
   const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
   const [isReplayButtonVisible, setIsReplayButtonVisible] = useState<boolean>(false);
   const [matchedCardsInfo, setMatchedCardsInfo] = useState<MatchedCardsInfo | null>(null);
-
-  const cardImages: Record<string, string> = {
-    '/src/assets/backgrounds/one.jpg': '/src/assets/backgrounds/eight.jpg',
-    '/src/assets/backgrounds/two.jpg': '/src/assets/backgrounds/eight.jpg',
-    '/src/assets/backgrounds/three.jpg': '/src/assets/backgrounds/eight.jpg',
-    '/src/assets/backgrounds/four.jpg': '/src/assets/backgrounds/eight.jpg',
-    '/src/assets/backgrounds/five.jpg': '/src/assets/backgrounds/eight.jpg',
-    '/src/assets/backgrounds/six.jpg': '/src/assets/backgrounds/eight.jpg',
-    '/src/assets/backgrounds/seven.jpg': '/src/assets/backgrounds/eight.jpg',
-    '/src/assets/backgrounds/eight.jpg': '/src/assets/backgrounds/eight.jpg',
-    '/src/assets/backgrounds/nine.jpg': '/src/assets/backgrounds/eight.jpg',
-    '/src/assets/backgrounds/ten.jpg': '/src/assets/backgrounds/eight.jpg',
-    '/src/assets/backgrounds/eleven.jpg': '/src/assets/backgrounds/eight.jpg',
-    '/src/assets/backgrounds/twelve.jpg': '/src/assets/backgrounds/eight.jpg',
-    '/src/assets/backgrounds/thirteen.jpg': '/src/assets/backgrounds/eight.jpg',
-    '/src/assets/backgrounds/fourteen.jpg': '/src/assets/backgrounds/eight.jpg',
-    '/src/assets/backgrounds/fifteen.jpg': '/src/assets/backgrounds/eight.jpg',
-    '/src/assets/backgrounds/sixteen.jpg': '/src/assets/backgrounds/eight.jpg',
-    '/src/assets/backgrounds/seventeen.jpg': '/src/assets/backgrounds/eight.jpg',
-  };
 
   const turnCard = (url1: string, url2: string) => {
     const turn = lst.map((card) => {
@@ -84,9 +84,10 @@ function App({ cards }: AppProps) {
             turnCard(selected[0], selected[1]);
             setSelected([]);
           } else {
+            const matchedCard = cardImages.find((img) => img.backgroundImage === selected[0]);
             setMatchedCardsInfo({
               text: `You matched the cards: ${selected[0]} and ${selected[1]}`,
-              imageUrl: cardImages[selected[0]] || ''
+              imageUrl: matchedCard ? matchedCard.descriptionImage : '',
             });
             setSelected([]);
           }
@@ -142,7 +143,6 @@ function App({ cards }: AppProps) {
     winner();
   }, [numJogadas]);
 
-
   return (
     <div className='d-flex flex-column'>
       <h1 className='text-center mt-3'>Jogo da Memória</h1>
@@ -161,11 +161,11 @@ function App({ cards }: AppProps) {
         <button className='btn btn-primary' onClick={handleInstantWin}>Instant Win</button>
         <Restart isVisible={isReplayButtonVisible} onClick={handleRestartGame} />
       </div>
-        <div className='creditsContainer'>
-          <div className='credits'>Feito por <a className="text-decoration-none" href="https://github.com/ArthurAndradee" target='_blank'>Arthur Andrade</a></div>
-          <div className='credits'>Apresentado por <a className="text-decoration-none" style={{color:'#006d31'}} href="https://github.com/ArthurAndradee" target='_blank'>Karina Flores</a></div>
-          <div className='credits'>Parceria  <a className="text-decoration-none" style={{color:'#6d0000', fontWeight:'900'}} href="https://github.com/ArthurAndradee" target='_blank'>Uniritter</a></div>
-        </div>
+      <div className='creditsContainer'>
+        <div className='credits'>Feito por <a className="text-decoration-none" href="https://github.com/ArthurAndradee" target='_blank'>Arthur Andrade</a></div>
+        <div className='credits'>Apresentado por <a className="text-decoration-none" style={{color:'#006d31'}} href="https://github.com/ArthurAndradee" target='_blank'>Karina Flores</a></div>
+        <div className='credits'>Parceria  <a className="text-decoration-none" style={{color:'#6d0000', fontWeight:'900'}} href="https://github.com/ArthurAndradee" target='_blank'>Uniritter</a></div>
+      </div>
     </div>
   );
 }
