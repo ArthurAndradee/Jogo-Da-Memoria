@@ -7,11 +7,13 @@
     gap: 50px;
 }  
 
-.creditsContainer {
-    margin-top: 100px;
-    padding-right: 10px;
+.credits-container {
+    margin-top: 20px;
+    padding-right: 2vw;
+    margin-bottom: 20px;
     
     text-align: end;
+    float: right;
 }
 
 .btn-primary {
@@ -19,12 +21,20 @@
 }
 
 .btn-dark {
+    float: left;
     width: 100px;
 }
 
 .credits {
     opacity: 0.4;
 }  
+
+@media only screen and (min-width: 1366px) {
+    .main {
+      width: 1366px;
+      margin: auto;
+    }
+  }
 
 @media only screen and (max-width: 1366px) {
     .container {
@@ -34,6 +44,11 @@
     .card-container {
         height: 100px;
         width:  100px;
+    }
+
+    .credits-container {
+        bottom:0;
+        right: 0;
     }
 }
 
