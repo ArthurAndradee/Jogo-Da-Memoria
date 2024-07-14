@@ -198,15 +198,17 @@ function App({ cards }: AppProps) {
           />
         )}
       </div>
-      <div className='container'>
-        <button className='btn btn-primary' onClick={handleInstantWin}>Virar todas as cartas</button>
-        <Restart isVisible={isReplayButtonVisible} onClick={handleRestartGame} />
+      <div>
+        <div className='container'>
+          <button className='btn btn-primary' onClick={handleInstantWin}>Virar todas as cartas</button>
+          <Restart isVisible={isReplayButtonVisible} onClick={handleRestartGame} />
+        </div>
+        <div className='credits-container'>
+          <div className='credits'>Feito por <a className="text-decoration-none" href="https://github.com/ArthurAndradee" target='_blank'>Arthur Andrade</a></div>
+          <div className='credits'>Apresentado por <a className="text-decoration-none" style={{color:'#006d31'}} href="https://www.linkedin.com/in/karina-sartori-flores-59a9b737/" target='_blank'>Karina Flores</a></div>
+          <div className='credits'>Parceria  <a className="text-decoration-none" style={{color:'#6d0000', fontWeight:'900'}} href="https://www.uniritter.edu.br/" target='_blank'>Uniritter</a></div>
+        </div>
       </div>
-      {/* <div className='creditsContainer'>
-        <div className='credits'>Feito por <a className="text-decoration-none" href="https://github.com/ArthurAndradee" target='_blank'>Arthur Andrade</a></div>
-        <div className='credits'>Apresentado por <a className="text-decoration-none" style={{color:'#006d31'}} href="https://github.com/ArthurAndradee" target='_blank'>Karina Flores</a></div>
-        <div className='credits'>Parceria  <a className="text-decoration-none" style={{color:'#6d0000', fontWeight:'900'}} href="https://github.com/ArthurAndradee" target='_blank'>Uniritter</a></div>
-      </div> */}
     </div>
   );
 }
