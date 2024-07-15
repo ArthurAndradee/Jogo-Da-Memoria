@@ -54,8 +54,6 @@
 
 @media only screen and (max-width: 1080px) {
     .container {
-
-        border: 1px solid red;
         width: 300px;
         
         grid-template-columns: 1fr 1fr 1fr;
