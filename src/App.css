@@ -54,7 +54,9 @@
 
 @media only screen and (max-width: 1080px) {
     .container {
-        width: 70vw;
+
+        border: 1px solid red;
+        width: 300px;
         
         grid-template-columns: 1fr 1fr 1fr;
         gap: 10px;
@@ -63,6 +65,7 @@
     .card-container {
         height: 70px;
         width:  70px;
+        margin: auto;
     }
     
     .btn-primary {
