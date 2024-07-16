@@ -45,11 +45,12 @@
         height: 100px;
         width:  100px;
     }
-
+    
     .credits-container {
         bottom:0;
         right: 0;
     }
+
 }
 
 @media only screen and (max-width: 1080px) {
